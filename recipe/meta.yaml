@@ -8,9 +8,11 @@ package:
 source:
   url: https://downloads.sourceforge.net/project/{{ name }}/{{ name }}-{{ version }}-Source.tar.xz
   sha256: b111c15fdc8c029989330ff559184198c161100a59312f5dc19ddeb9b5a15889
+  patches:
+    - pkgconfig_win.patch 
 
 build:
-  number: 1
+  number: 2
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x.x') }}
 
