@@ -9,7 +9,8 @@ source:
   url: https://downloads.sourceforge.net/project/{{ name }}/{{ name }}-{{ version }}-Source.tar.xz
   sha256: b111c15fdc8c029989330ff559184198c161100a59312f5dc19ddeb9b5a15889
   patches:
-    - pkgconfig_win.patch 
+    - pkgconfig_win.patch
+    - 5.patch
 
 build:
   number: 3
