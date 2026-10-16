@@ -1,7 +1,7 @@
 mkdir build
 cd build
 
-cmake ^
+cmake %CMAKE_ARGS% ^
     -G "NMake Makefiles" ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -DCMAKE_BUILD_TYPE=Release ^
@@ -18,5 +18,7 @@ cmake --build . --config Release --target install
 if errorlevel 1 exit 1
 
 :: Test.
+if not "%CONDA_BUILD_SKIP_TESTS%"=="1" (
 ctest --output-on-failure -C Release
+)
 if errorlevel 1 exit 1
