@@ -21,10 +21,11 @@ requirements:
   build:
     - cmake
     - {{ compiler('c') }}
-    - {{ stdlib("c") }
+    - {{ stdlib("c") }}
     - make
-    - llvm-openmp  # [osx]
-    - libgomp  # [linux]
+  host:
+    - libgomp      # [linux]
+    - llvm-openmp  # [not linux]
 
 test:
   commands:
